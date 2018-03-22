@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Online Shopping - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet"/>
+   <link href="css/bootstrap-readable-theme.css" rel="stylesheet"></link> 
+   <base href="/"></base>
+</head>
+<body ng-app="app">
+
+    <!-- Navigation -->
+ 
+	<div ng-include="'/views/navbar.html'"></div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+<div class="col-lg-3">
+      <div ng-include="'/views/leftmenu.html'"></div>
+</div>      
+        <!-- /.col-lg-3 -->
+<div class="col-lg-9">
+	<ng-view>
+		
+	</ng-view>
+</div>
+               
+        <!-- /.col-lg-9 -->
+
+  <div class="col-sm-offset-2 col-sm-10" ng-controller="getUsers">
+		<button id="btn-id" type="button" class="btn btn-primary" ng-click="getfunction()">Get All Users</button>
+		<ul>
+        	<li ng-repeat="cust in response track by cust.id">{{cust.firstname + " " + cust.lastname}}</li>
+    	</ul>
+	</div>
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/angular.js"></script>
+    <!-- <script src="js/angular-route.js"></script> -->
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+     <script src="js/angular-animate.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+    <script src="js/angular-touch.js"></script>
+    <script src="js/angular-loader.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/ng_app.js"></script>
+    <script src="js/ng-controllers/userController.js"></script>
+
+  </body>
+</html>
