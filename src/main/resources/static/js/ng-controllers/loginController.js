@@ -1,4 +1,4 @@
-app.controller('getUsers', function($scope, $http, $location) {
+app.controller('loginController', function($scope, $http, $location) {
 	
 	/*$location.html5Mode({
 		  enabled: true,
@@ -24,31 +24,3 @@ app.controller('getUsers', function($scope, $http, $location) {
 		});
 	}
 });
-
-
-app.controller('usersController', function($scope) {
-
-	    $scope.headingTitle = "User List";
-	
-	});
-	
-	 
-	
-	app.controller('rolesController', function($scope) {
-	
-	    $scope.headingTitle = "Roles List";
-	
-	});
-	
-	app.controller('navigation', function($scope) {
-		
-		$scope.goToLogin=function()
-		{	
-			alert(1);
-		   window.location.href="/login.html";
-	    }
-		
-		
-	
-	});	
-	

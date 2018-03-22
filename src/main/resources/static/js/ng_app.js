@@ -30,6 +30,7 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider,$locati
 	$locationProvider.html5Mode(true);
 	
     $routeProvider
+   /* .when('/login',  {templateUrl:"/login.html", controller : 'navigation'})*/
     .when('/index',  {templateUrl:"index.html"})
     .when('/users',  {templateUrl:"users.html"})
     .when('/roles',  {templateUrl:"roles.html"})
