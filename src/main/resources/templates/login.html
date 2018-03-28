@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8"/>
     <title>Login page - Online Shopping</title>
@@ -22,7 +22,7 @@
 
     <!-- Le favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>
-
+<base href="/"></base>
   </head>
 
   <body ng-app="app">
@@ -43,23 +43,23 @@
     <div class="container" ng-controller="loginController">
 
         <div id="login-wraper">
-            <form class="form login-form">
+            <form class="form login-form" th:action="@{/j_spring_security_check}" method='POST'>
                 <legend>Sign in to <span class="blue">MyApp</span></legend>
             
                 <div class="body">
                     <label>Username</label>
-                    <input type="text"/>
+                    <input type="text" name='username'/>
                     
                     <label>Password</label>
-                    <input type="password"/>
+                    <input type="password" name='password' />
                 </div>
             
                 <div class="footer">
                     <label class="checkbox inline">
-                        <input type="checkbox" id="inlineCheckbox1" value="option1"/> Remember me
+                        <input type="checkbox" id="inlineCheckbox1" value="option1" name="remember-me"/> Remember me
                     </label>
                                 
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="submit" class="btn btn-success" value="submit" >Login</button>
                 </div>
             
             </form>
@@ -92,5 +92,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     
     <script src="js/ng_app.js"></script>
+    <script src="js/ng-controllers/loginController.js"></script>
+    
   </body>
 </html>

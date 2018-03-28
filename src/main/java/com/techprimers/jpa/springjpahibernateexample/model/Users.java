@@ -106,6 +106,23 @@ public class Users {
 	}
 	
 	
+
+
+
+	public boolean isadmin() {
+		return isadmin;
+	}
+
+
+
+	public void setIsadmin(boolean isadmin) {
+		this.isadmin = isadmin;
+	}
+
+
+
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -117,6 +134,7 @@ public class Users {
 	private String mobilenumber;
 	private Integer companyid;
 	private boolean isactive;
+	private boolean isadmin;
 	private String createdby;
 	private String updatedby;
 	private Date createddate;

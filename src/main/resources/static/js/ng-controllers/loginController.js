@@ -9,9 +9,16 @@ app.controller('loginController', function($scope, $http, $location) {
 	*/
 	$scope.Users={};
 	
+	$scope.Login=function()
+	{
+		alert("Login");
+		window.location.href="/";
+	}
+	
+	
 	$scope.getfunction = function(){
 		var url = window.location.origin + "/users/all";
-		alert(url);
+		//alert(url);
 		//var url=new $window.URL($location.absUrl()).origin+ "/users/all";
 		//var relUrl=$location.parseLinkUrl(url);
 		

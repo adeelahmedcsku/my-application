@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techprimers.jpa.springjpahibernateexample.model.Users;
@@ -53,6 +54,28 @@ public class UsersResource {
 		return usersRepository.findOne(id);
 	}
 	
+	@GetMapping("/login")
+	public Users loginUser(@PathVariable String username){
+		
+		
+		//return usersRepository.findByName(name);
+		
+		Users usr=usersRepository.findByusername(username);
+		
+		
+		return usr;
+	}
+	
+	
+	/*@RequestMapping(
+			  value = "/Login", 
+			  params = { "username", "password" }, 
+			  method = RequestMethod.GET)
+	public Users Login(@PathVariable("username") final String username,@PathVariable("password") final String password){
+		
+		
+		return usersRepository.findByusernameAndpassword(username, password);
+	}*/
 	
 	@PostMapping("/createUser")
 	public Users createUser(@RequestBody Users users) {
